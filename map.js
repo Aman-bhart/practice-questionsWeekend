@@ -153,7 +153,16 @@ const joinedArraysOf = function (arrayOfArrays) {
 
 
 // repeat strings in ["hi", "bye"] => ["hihi", "byebye"]
-const repeatedStringsOf = function (strings) { };
+const wordRepat = function (word) {
+  return word.repeat(2);
+};
+
+const repeatedStringsOf = function (strings) {
+  return strings.map(wordRepat);
+};
+
+// console.log(repeatedStringsOf(["hi", "bye"]));
+
 
 // count vowels in ["apple", "banana", "grape"] => [2, 3, 2]
 const countVowelsOf = function (strings) { };
