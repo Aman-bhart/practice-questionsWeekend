@@ -328,10 +328,28 @@ const flattenedArraysOf = function (arrays) {
 
 
 // sort letters in ["cat", "bat", "rat"] alphabetically => ["act", "abt", "art"]
-const sortedLettersOf = function (strings) { };
+const sortWordsLetter = function (word) {
+  return [...word].sort().join("");
+};
+
+const sortedLettersOf = function (strings) {
+  return strings.map(sortWordsLetter);
+};
+
+// console.log(sortedLettersOf(["cat", "bat", "rat"]));
+
 
 // wrap strings in brackets ["apple", "banana"] => ["[apple]", "[banana]"]
-const wrappedStringsOf = function (strings) { };
+const wrapInSquareBracket = function (word) {
+  return "[" + word + "]";
+};
+
+const wrappedStringsOf = function (strings) {
+  return strings.map(wrapInSquareBracket);
+};
+
+console.log(wrappedStringsOf(["apple", "banana"]));
+
 
 // extract names from [{ name: "Alice" }, { name: "Bob" }] => ["Alice", "Bob"]
 const extractNames = function (objects) { };
