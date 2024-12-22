@@ -124,14 +124,33 @@ const domainNamesOf = function (emails) {
   return emails.map(emailDomain);
 };
 
-console.log(domainNamesOf(["user1@gmail.com", "admin@yahoo.com"]));
+// console.log(domainNamesOf(["user1@gmail.com", "admin@yahoo.com"]));
 
 
 // split words in ["hello world", "goodbye moon"] => [["hello", "world"], ["goodbye", "moon"]]
-const splitWordsOf = function (strings) { };
+const splitWords = function (words) {
+  return words.split(" ");
+};
+
+const splitWordsOf = function (strings) {
+  return strings.map(splitWords);
+};
+
+// console.log(splitWordsOf(["hello world", "goodbye moon"]));
+
 
 // join arrays of [["a", "b"], ["c", "d"]] => ["ab", "cd"]
-const joinedArraysOf = function (arrayOfArrays) { };
+const joinArray = function (array) {
+  return array.join("");
+};
+
+const joinedArraysOf = function (arrayOfArrays) {
+  return arrayOfArrays.map(joinArray);
+};
+
+// console.log(joinedArraysOf([["a", "b"], ["c", "d"]]));
+// console.log(joinedArraysOf([["a", "b"], ["c", " "]]));
+
 
 // repeat strings in ["hi", "bye"] => ["hihi", "byebye"]
 const repeatedStringsOf = function (strings) { };
