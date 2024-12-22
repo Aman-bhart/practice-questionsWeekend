@@ -348,11 +348,22 @@ const wrappedStringsOf = function (strings) {
   return strings.map(wrapInSquareBracket);
 };
 
-console.log(wrappedStringsOf(["apple", "banana"]));
+// console.log(wrappedStringsOf(["apple", "banana"]));
 
 
 // extract names from [{ name: "Alice" }, { name: "Bob" }] => ["Alice", "Bob"]
-const extractNames = function (objects) { };
+const extractValue = function (keys) {
+  return function (object) {
+    return object[keys];
+  };
+};
+
+const extractNames = function (objects) {
+  return objects.map(extractValue("name"));
+};
+
+console.log(extractNames([{ name: "Alice" }, { name: "Bob" }]));
+
 
 // extract ages from [{ age: 25 }, { age: 30 }] => [25, 30]
 const extractAges = function (objects) { };
