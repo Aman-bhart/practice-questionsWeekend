@@ -63,12 +63,30 @@ const percentageContributions = function (numbers) {
 
 // normalize strings by the longest string length in ["cat", "elephant", "dog"] => ["cat    ", "elephant", "dog    "]
 // (pad with spaces to match the longest length)
-const normalizeStringLengths = function (strings) {
-  const maxLength = strings.reduce(function (maxLength, string) {
+const geetMaxLength = function (strings) {
+  return strings.reduce(function (maxLength, string) {
     return maxLength > string.length ? maxLength : string.length;
   });
+};
+
+const normalizeStringLengths = function (strings) {
+  const maxLength = geetMaxLength(strings);
 
   return strings.map(function (string) { return string.padEnd(maxLength, " "); });
 };
 
 // console.log(normalizeStringLengths(["cat", "elephant", "dog"]));
+
+// normalize strings by centering them based on the longest string length in ["cat", "elephant", "dog"] => ["  cat   ", "elephant", "  dog   "]
+// (pad with spaces to justify to the center)
+const centerJustifyStrings = function (strings) {
+  const maxLength = geetMaxLength(strings);
+
+  return strings.map(function (string) {
+    const startPad = Math.floor((maxLength - string.length) / 2) + string.length;
+    return string.padStart(startPad, " ").padEnd(maxLength, " ");
+  });
+};
+
+// console.log(centerJustifyStrings(["cat", "elephant", "dog"]));
+// console.log(centerJustifyStrings(["cat", "elephant", "four"]));
