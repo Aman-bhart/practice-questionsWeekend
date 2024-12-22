@@ -95,7 +95,12 @@ const doubleLettersOf = function (strings) {
 
 
 // boolean negation of [true, false, true] => [false, true, false]
-const negatedBooleansOf = function (booleans) { };
+const negatedBooleansOf = function (booleans) {
+  return booleans.map(function (boolean) { return !boolean; });
+};
+
+// console.log(negatedBooleansOf([true, false]));
+
 
 // character codes of ["a", "b", "c"] => [97, 98, 99]
 // Use the `charCodeAt` method on each string
