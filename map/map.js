@@ -302,7 +302,13 @@ const subtractMin = function (numbers) {
 // console.log(subtractMin([3, 8, 1]));
 
 // scale all numbers proportionally so the largest number becomes 100 in [20, 50, 80] => [25, 62.5, 100]
-const scaleToMax100 = function (numbers) { };
+const scaleToMax100 = function (numbers) {
+  const maxNum = Math.max(...numbers);
+
+  return numbers.map(function (num) { return num / maxNum * 100; });
+};
+
+// console.log(scaleToMax100([20, 50, 80]));
 
 // map each number to the difference between it and the average of the array in [10, 20, 30] => [-10, 0, 10]
 const differencesFromMean = function (numbers) { };
