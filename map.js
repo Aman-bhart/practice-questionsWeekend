@@ -261,7 +261,7 @@ const uniqueCharactersOf = function (strings) {
 };
 
 // console.log(uniqueCharactersOf(["apple", "banana", "grape"]));
-
+//competed 19 questions
 
 // generate ranges from [3, 5, 2] => [[0, 1, 2], [0, 1, 2, 3, 4], [0, 1]]
 const rangesOf = function (numbers) { };
