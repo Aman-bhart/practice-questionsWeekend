@@ -299,7 +299,21 @@ const capitalizedFirstLettersOf = function (strings) {
 
 
 // find word lengths in ["apple pie", "banana split"] => [[5, 3], [6, 5]]
-const wordLengthsOf = function (strings) { };
+const wordLength = function (word) {
+  return word.length;
+};
+
+const getWordsLength = function (string) {
+  return string.split(" ").map(wordLength);
+};
+
+const wordLengthsOf = function (strings) {
+  return strings.map(getWordsLength);
+};
+
+// console.log(wordLengthsOf(["apple pie", "banana split"]));
+// console.log(wordLengthsOf(["apple pie", " "]));
+
 
 // flatten nested arrays of [[1, [2, 3]], [4, [5, 6]]] => [[1, 2, 3], [4, 5, 6]]
 const flattenedArraysOf = function (arrays) { };
