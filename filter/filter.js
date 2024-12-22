@@ -32,7 +32,7 @@ const filterActiveUsers = function (users) {
 
 // numbers greater than 10 [5, 12, 7, 18, 3] => [12, 18]
 const filterNumbersGreaterThanTen = function (numbers) {
-  // return numbers.filter(function (num) { return num > 10; });
+  return numbers.filter(function (num) { return num > 10; });
 };
 
 // console.log(filterNumbersGreaterThanTen([5, 12, 7, 18, 3]));
