@@ -37,11 +37,25 @@ const uppercaseOf = function (strings) {
 
 
 // first characters of ["apple", "banana", "kiwi"] => ["a", "b", "k"]
-const firstCharactersOf = function (strings) { };
+const extractFirstChar = function (string) {
+  return string.at(0) || "";
+};
+
+const firstCharactersOf = function (strings) {
+  return strings.map(extractFirstChar);
+};
+
+// console.log(firstCharactersOf(["hello", "lucknow", "upperCase", "delhi"]));
+// console.log(firstCharactersOf(["hello", "lucknow", "upperCase", ""]));
+
 
 // truth values of [0, 1, 2, 3] => [false, true, true, true]
 // Assume non-zero numbers are true, and zero is false
-const truthValuesOf = function (numbers) { };
+const convertsToBollean = function()
+
+const truthValuesOf = function (numbers) {
+  return numbers.map(convertsToBollean);
+};
 
 // reverse strings of ["hello", "world"] => ["olleh", "dlrow"]
 const reversedStringsOf = function (strings) { };
