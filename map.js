@@ -362,14 +362,29 @@ const extractNames = function (objects) {
   return objects.map(extractValue("name"));
 };
 
-console.log(extractNames([{ name: "Alice" }, { name: "Bob" }]));
+// console.log(extractNames([{ name: "Alice" }, { name: "Bob" }]));
 
 
 // extract ages from [{ age: 25 }, { age: 30 }] => [25, 30]
-const extractAges = function (objects) { };
+const extractAges = function (objects) {
+  return objects.map(extractValue("age"));
+};
+
+// console.log(extractAges([{ age: 25 }, { age: 30 }]));
+
 
 // extract the first letters of names from [{ name: "Alice" }, { name: "Bob" }] => ["A", "B"]
-const firstLettersOfNames = function (objects) { };
+// const firstLetter = function (word) {
+//   return word.at(0) || "";
+// };
+
+// const firstLettersOfNames = function (objects) {
+//   return objects.map(extractValue("name")).map(firstLetter);
+// };
+
+// console.log(firstLettersOfNames([{ name: "Alice" }, { name: "Bob" }]));
+// console.log(firstLettersOfNames([{ name: "Alice" }, { name: "" }]));
+
 
 // calculate areas from [{ width: 2, height: 3 }, { width: 4, height: 5 }] => [6, 20]
 const calculateAreas = function (rectangles) { };
