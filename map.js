@@ -64,7 +64,18 @@ const truthValuesOf = function (numbers) {
 
 
 // reverse strings of ["hello", "world"] => ["olleh", "dlrow"]
-const reversedStringsOf = function (strings) { };
+const reverse = function (string) {
+  const stringArray = [...string];
+  return stringArray.reverse().join("");
+};
+
+const reversedStringsOf = function (strings) {
+  return strings.map(reverse);
+};
+
+console.log(reversedStringsOf(["hello", "lucknow", "upperCase", "delhi"]));
+console.log(reversedStringsOf(["hello", "lucknow", "upperCase", ""]));
+
 
 // double letters of ["cat", "dog", "bat"] => ["ccaat", "ddoog", "bbaatt"]
 const doubleLettersOf = function (strings) { };
