@@ -374,16 +374,16 @@ const extractAges = function (objects) {
 
 
 // extract the first letters of names from [{ name: "Alice" }, { name: "Bob" }] => ["A", "B"]
-// const firstLetter = function (word) {
-//   return word.at(0) || "";
-// };
+const firstLetter = function (word) {
+  return word.at(0) || "";
+};
 
-// const firstLettersOfNames = function (objects) {
-//   return objects.map(extractValue("name")).map(firstLetter);
-// };
+const firstLettersOfNames = function (objects) {
+  return objects.map(extractValue("name")).map(firstLetter);
+};
 
-// console.log(firstLettersOfNames([{ name: "Alice" }, { name: "Bob" }]));
-// console.log(firstLettersOfNames([{ name: "Alice" }, { name: "" }]));
+console.log(firstLettersOfNames([{ name: "Alice" }, { name: "Bob" }]));
+console.log(firstLettersOfNames([{ name: "Alice" }, { name: "" }]));
 
 
 // calculate areas from [{ width: 2, height: 3 }, { width: 4, height: 5 }] => [6, 20]
