@@ -51,3 +51,12 @@ const withoutVowelsOf = function (strings) {
 };
 
 // console.log(withoutVowelsOf(["apple", "banana", "grape"]));
+
+// calculate percentage contribution of each number in [10, 20, 30] (relative to the total sum) => [16.67, 33.33, 50]
+const percentageContributions = function (numbers) {
+  const totalSum = numbers.reduce(function (sum, num) { return sum + num; }, 0);
+
+  return numbers.map(function (score) { return score * 100 / totalSum; });
+};
+
+// console.log(percentageContributions([10, 20, 30]));
