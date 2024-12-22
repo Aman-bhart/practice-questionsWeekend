@@ -382,12 +382,21 @@ const firstLettersOfNames = function (objects) {
   return objects.map(extractValue("name")).map(firstLetter);
 };
 
-console.log(firstLettersOfNames([{ name: "Alice" }, { name: "Bob" }]));
-console.log(firstLettersOfNames([{ name: "Alice" }, { name: "" }]));
+// console.log(firstLettersOfNames([{ name: "Alice" }, { name: "Bob" }]));
+// console.log(firstLettersOfNames([{ name: "Alice" }, { name: "" }]));
 
 
 // calculate areas from [{ width: 2, height: 3 }, { width: 4, height: 5 }] => [6, 20]
-const calculateAreas = function (rectangles) { };
+const evaluateArea = function (dimension) {
+  return extractValue("width")(dimension) * extractValue("height")(dimension);
+};
+
+const calculateAreas = function (rectangles) {
+  return rectangles.map(evaluateArea);
+};
+
+console.log(calculateAreas([{ width: 2, height: 3 }, { width: 4, height: 5 }]));
+
 
 // extract boolean flags from [{ active: true }, { active: false }] => [true, false]
 const extractFlags = function (objects) { };
