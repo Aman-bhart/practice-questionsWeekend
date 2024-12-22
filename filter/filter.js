@@ -61,7 +61,13 @@ const filterHighGrades = function (students) {
 // console.log(filterHighGrades([{ name: "John", grade: 75 }, { name: "Jane", grade: 85 }]));
 
 // products that are in stock [{product: "apple", inStock: true}, {product: "banana", inStock: false}] => [{product: "apple", inStock: true}]
-const filterInStockProducts = function (products) { };
+const filterInStockProducts = function (products) {
+  return products.filter(function (productStatus) {
+    return productStatus.inStock;
+  });
+};
+
+// console.log(filterInStockProducts([{ product: "apple", inStock: true }, { product: "banana", inStock: false }]));
 
 // orders placed in the last 30 days [{orderDate: "2024-11-01"}, {orderDate: "2024-12-01"}] => [{orderDate: "2024-12-01"}]
 const filterRecentOrders = function (orders) { };
