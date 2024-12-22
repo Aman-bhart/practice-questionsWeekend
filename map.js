@@ -216,7 +216,26 @@ const withoutVowelsOf = function (strings) {
 
 // cumulative sums of [[1, 2, 3], [4, 5, 6]] => [[1, 3, 6], [4, 9, 15]]
 // Example: cumulative sum of [1, 2, 3] is [1, 1+2, 1+2+3]
-const cumulativeSumsOf = function (arrays) { };
+const cumulateSum = function () {
+  let sum = 0;
+
+  return function (num) {
+    sum += num;
+
+    return sum;
+  };
+};
+
+const mapTheCumulateSum = function (array) {
+  return array.map(cumulateSum());
+};
+
+const cumulativeSumsOf = function (arrays) {
+  return arrays.map(mapTheCumulateSum);
+};
+
+console.log(cumulativeSumsOf([[1, 2, 3], [4, 5, 6]]));
+
 
 // reverse words in ["hello world", "goodbye moon"] => ["olleh dlrow", "eybdoog noom"]
 const reversedWordsOf = function (strings) { };
