@@ -322,7 +322,32 @@ const differencesFromMean = function (numbers) {
 // console.log(differencesFromMean([10, 20, 30]));
 
 // map each string to its frequency in ["apple", "banana", "apple", "apple", "banana"] => [3, 2, 3, 3, 2]
-const stringFrequencies = function (strings) { };
+const countOccurence = function (word, strings) {
+  return strings.reduce(function (count, string) {
+    return string === word ? count + 1 : count;
+  }, 0);
+};
+
+const tallyString = function (strings) {
+  const words = new Array();
+  const tallyCount = new Array();
+
+  return function (string) {
+    if (words.includes(string)) {
+      return tallyCount.at(words.indexOf(string));
+    }
+
+    tallyCount.push(countOccurence(string, strings));
+
+    return tallyCount.at(-1);
+  };
+};
+
+const stringFrequencies = function (strings) {
+  return strings.map(tallyString(strings));
+};
+
+// console.log(stringFrequencies(["apple", "banana", "apple", "apple", "banana"]));
 
 // mark the largest number in an array as true, others as false in [1, 3, 2] => [false, true, false]
 const markLargestNumber = function (numbers) { };
