@@ -249,9 +249,19 @@ const reversedWordsOf = function (strings) {
 // console.log(reversedWordsOf(["hello world", "goodbye moon"]));
 
 
-// extract unique characters from ["apple", "banana", "grape"] => ["apl", "ban", "gra"]
+// extract unique characters from ["apple", "banana", "grape"] => ["aple", "ban", "grape"]
 // Maintain the order of their first appearance in each string
-const uniqueCharactersOf = function (strings) { };
+const getUniqueCharacters = function (string) {
+  const stringSet = new Set([...string]);
+  return Array.from(stringSet).join("");
+};
+
+const uniqueCharactersOf = function (strings) {
+  return strings.map(getUniqueCharacters);
+};
+
+// console.log(uniqueCharactersOf(["apple", "banana", "grape"]));
+
 
 // generate ranges from [3, 5, 2] => [[0, 1, 2], [0, 1, 2, 3, 4], [0, 1]]
 const rangesOf = function (numbers) { };
