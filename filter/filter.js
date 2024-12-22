@@ -24,10 +24,18 @@ const filterAdults = function (people) {
 // console.log(filterAdults([{ name: "Alice", age: 25 }, { name: "Bob", age: 35 }]));
 
 // active users [{username: "alice", active: true}, {username: "bob", active: false}] => [{username: "alice", active: true}]
-const filterActiveUsers = function (users) { };
+const filterActiveUsers = function (users) {
+  return users.filter(function (user) { return user.active; });
+};
+
+// console.log(filterActiveUsers([{ username: "alice", active: true }, { username: "bob", active: false }]));
 
 // numbers greater than 10 [5, 12, 7, 18, 3] => [12, 18]
-const filterNumbersGreaterThanTen = function (numbers) { };
+const filterNumbersGreaterThanTen = function (numbers) {
+  // return numbers.filter(function (num) { return num > 10; });
+};
+
+// console.log(filterNumbersGreaterThanTen([5, 12, 7, 18, 3]));
 
 // books with more than 200 pages [{title: "Book 1", pages: 150}, {title: "Book 2", pages: 250}] => [{title: "Book 2", pages: 250}]
 const filterLongBooks = function (books) { };
