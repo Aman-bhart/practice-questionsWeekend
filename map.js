@@ -281,7 +281,22 @@ const rangesOf = function (numbers) {
 
 
 // capitalize first letters of ["hello world", "goodbye moon"] => ["Hello World", "Goodbye Moon"]
-const capitalizedFirstLettersOf = function (strings) { };
+const makeFirstLetterCapitalOfWord = function (word) {
+  return (word.at(0) || "").toUpperCase() + word.slice(1);
+};
+
+const makeFirstLetterCapitalOfEveryWord = function (words) {
+  return words.split(" ").map(makeFirstLetterCapitalOfWord).join(" ");
+};
+
+const capitalizedFirstLettersOf = function (strings) {
+  return strings.map(makeFirstLetterCapitalOfEveryWord);
+};
+
+// console.log(capitalizedFirstLettersOf(["hello world", "goodbye  moon"]));
+// console.log(capitalizedFirstLettersOf([""]));
+// console.log(capitalizedFirstLettersOf(["hello world", "goodbye moon"]));
+
 
 // find word lengths in ["apple pie", "banana split"] => [[5, 3], [6, 5]]
 const wordLengthsOf = function (strings) { };
