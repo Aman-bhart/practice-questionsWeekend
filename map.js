@@ -358,7 +358,7 @@ const fullNames = function (objects) {
   return objects.map(concateFirstAndLast);
 };
 
-console.log(fullNames([{ firstName: "Alice", lastName: "Smith" }, { firstName: "Bob", lastName: "Brown" }]));
+// console.log(fullNames([{ firstName: "Alice", lastName: "Smith" }, { firstName: "Bob", lastName: "Brown" }]));
 
 
 // calculate total prices from [{ price: 10, quantity: 2 }, { price: 5, quantity: 4 }] => [20, 20]
@@ -376,10 +376,19 @@ const totalPrices = function (objects) {
 
 // determine if a person is an adult from [{ name: "Alice", age: 17 }, { name: "Bob", age: 22 }] => [false, true]
 // (age >= 18)
-const isAdult = function (objects) { };
+const isAdult = function (objects) {
+  return objects.map(function (object) { return object.age >= 18; });
+};
+
+// console.log(isAdult([{ name: "Alice", age: 17 }, { name: "Bob", age: 22 }]));
+
 
 // create abbreviations from [{ city: "New York", country: "USA" }, { city: "Los Angeles", country: "USA" }] => ["NY, USA", "LA, USA"]
-const abbreviations = function (objects) { };
+
+
+const abbreviations = function (objects) { 
+  return objects.map(createAbbreviation);
+};
 
 // extract scores for math tests from [{ name: "Alice", scores: { math: 90, english: 85 } }, { name: "Bob", scores: { math: 80, english: 75 } }] => [90, 80]
 const mathScores = function (objects) { };
