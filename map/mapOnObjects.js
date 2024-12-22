@@ -162,3 +162,16 @@ const normalizeScores = function (objects) {
 };
 
 // console.log(normalizeScores([{ name: "Alice", score: 80 }, { name: "Bob", score: 100 }]));
+
+// calculate ranks (1-based, descending) for scores in [{ name: "Alice", score: 80 }, { name: "Bob", score: 100 }, { name: "Charlie", score: 90 }] => [3, 1, 2]
+const calculateRanks = function (objects) {
+  const scores = objects.map(function (object) { return object.score; }).sort(
+    function (a, b) {
+      return b - a;
+    }
+  );
+
+  return objects.map(function (object) { return scores.indexOf(object.score) + 1; });
+};
+
+// console.log(calculateRanks([{ name: "Alice", score: 80 }, { name: "Bob", score: 100 }, { name: "Charlie", score: 90 }]));
