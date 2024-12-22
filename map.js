@@ -165,7 +165,24 @@ const repeatedStringsOf = function (strings) {
 
 
 // count vowels in ["apple", "banana", "grape"] => [2, 3, 2]
-const countVowelsOf = function (strings) { };
+const isAVowel = function (vowelCount, alphabet) {
+  const allVowels = "aeiouAEIOU";
+
+  return allVowels.includes(alphabet) ? vowelCount + 1 : vowelCount;
+};
+
+const vowelCount = function (word) {
+  const wordArray = [...word];
+
+  return wordArray.reduce(isAVowel, 0);
+};
+
+const countVowelsOf = function (strings) {
+  return strings.map(vowelCount);
+};
+
+// console.log(countVowelsOf(["apple", "banana", "grape"]));
+
 
 // reverse arrays of [[1, 2, 3], [4, 5, 6]] => [[3, 2, 1], [6, 5, 4]]
 const reversedArraysOf = function (arrays) { };
