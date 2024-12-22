@@ -384,11 +384,23 @@ const isAdult = function (objects) {
 
 
 // create abbreviations from [{ city: "New York", country: "USA" }, { city: "Los Angeles", country: "USA" }] => ["NY, USA", "LA, USA"]
+const filterUpperCase = function (string) {
+  return [...string].filter(function (char) {
+    return char.charCodeAt() >= 65 && char.charCodeAt() <= 90;
+  }).join("");
+};
 
+const createAbbreviation = function (object) {
+  let abbre = filterUpperCase(object.city);
+  abbre += ", " + filterUpperCase(object.country);
+  return abbre;
+};
 
-const abbreviations = function (objects) { 
+const abbreviations = function (objects) {
   return objects.map(createAbbreviation);
 };
+
+console.log(abbreviations([{ city: "New York", country: "USA" }, { city: "Los Angeles", country: "USA" }]));
 
 // extract scores for math tests from [{ name: "Alice", scores: { math: 90, english: 85 } }, { name: "Bob", scores: { math: 80, english: 75 } }] => [90, 80]
 const mathScores = function (objects) { };
