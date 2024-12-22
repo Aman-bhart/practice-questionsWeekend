@@ -60,3 +60,15 @@ const percentageContributions = function (numbers) {
 };
 
 // console.log(percentageContributions([10, 20, 30]));
+
+// normalize strings by the longest string length in ["cat", "elephant", "dog"] => ["cat    ", "elephant", "dog    "]
+// (pad with spaces to match the longest length)
+const normalizeStringLengths = function (strings) {
+  const maxLength = strings.reduce(function (maxLength, string) {
+    return maxLength > string.length ? maxLength : string.length;
+  });
+
+  return strings.map(function (string) { return string.padEnd(maxLength, " "); });
+};
+
+// console.log(normalizeStringLengths(["cat", "elephant", "dog"]));
