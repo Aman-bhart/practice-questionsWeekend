@@ -410,7 +410,12 @@ const mathScores = function (objects) {
 // console.log(mathScores([{ name: "Alice", scores: { math: 90, english: 85 } }, { name: "Bob", scores: { math: 80, english: 75 } }]));
 
 // extract coordinates from [{ x: 1, y: 2 }, { x: 3, y: 4 }] => [[1, 2], [3, 4]]
-const extractCoordinates = function (objects) { };
+const extractCoordinates = function (objects) {
+  return objects.map(function (object) { return [object.x, object.y]; });
+};
+
+// console.log(extractCoordinates([{ x: 1, y: 2 }, { x: 3, y: 4 }]));
+
 
 // extract full name and age from [{ firstName: "Alice", lastName: "Smith", age: 25 }, { firstName: "Bob", lastName: "Brown", age: 30 }] => [["Alice Smith", 25], ["Bob Brown", 30]]
 const fullNameAndAge = function (objects) { };
