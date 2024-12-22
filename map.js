@@ -73,12 +73,26 @@ const reversedStringsOf = function (strings) {
   return strings.map(reverse);
 };
 
-console.log(reversedStringsOf(["hello", "lucknow", "upperCase", "delhi"]));
-console.log(reversedStringsOf(["hello", "lucknow", "upperCase", ""]));
+// console.log(reversedStringsOf(["hello", "lucknow", "upperCase", "delhi"]));
+// console.log(reversedStringsOf(["hello", "lucknow", "upperCase", ""]));
 
 
-// double letters of ["cat", "dog", "bat"] => ["ccaat", "ddoog", "bbaatt"]
-const doubleLettersOf = function (strings) { };
+// double letters of ["cat", "dog", "bat"] => ["ccaatt", "ddoogg", "bbaatt"]
+const charTwiceRepeat = function (char) {
+  return char.repeat(2);
+};
+
+const makeWordsLettersDouble = function (string) {
+  return [...string].map(charTwiceRepeat).join("");
+};
+
+const doubleLettersOf = function (strings) {
+  return strings.map(makeWordsLettersDouble);
+};
+
+// console.log(doubleLettersOf(["hello", "lucknow", "upperCase", "delhi"]));
+// console.log(doubleLettersOf(["hello", "lucknow", "", "delhi"]));
+
 
 // boolean negation of [true, false, true] => [false, true, false]
 const negatedBooleansOf = function (booleans) { };
