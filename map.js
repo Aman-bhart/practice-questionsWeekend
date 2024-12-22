@@ -19,12 +19,22 @@ const lengthsOf = function (strings) {
   return strings.map(stringLength);
 };
 
-console.log(lengthsOf(["aman", "hello", "", "new York"]));
-console.log(lengthsOf([""]));
+// console.log(lengthsOf(["aman", "hello", "", "new York"]));
+// console.log(lengthsOf([""]));
 
 
 // uppercase of ["hello", "world"] => ["HELLO", "WORLD"]
-const uppercaseOf = function (strings) { };
+const makeUpperCase = function (string) {
+  return string.toUpperCase();
+};
+
+const uppercaseOf = function (strings) {
+  return strings.map(makeUpperCase);
+};
+
+// console.log(uppercaseOf(["lucknow", "upperCase", "delhi"]));
+// console.log(uppercaseOf([""]));
+
 
 // first characters of ["apple", "banana", "kiwi"] => ["a", "b", "k"]
 const firstCharactersOf = function (strings) { };
