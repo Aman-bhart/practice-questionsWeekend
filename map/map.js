@@ -311,7 +311,15 @@ const scaleToMax100 = function (numbers) {
 // console.log(scaleToMax100([20, 50, 80]));
 
 // map each number to the difference between it and the average of the array in [10, 20, 30] => [-10, 0, 10]
-const differencesFromMean = function (numbers) { };
+const differencesFromMean = function (numbers) {
+  const average = numbers.reduce(function (sum, num) {
+    return sum + num;
+  }, 0) / numbers.length;
+
+  return numbers.map(function (num) { return num - average; });
+};
+
+// console.log(differencesFromMean([10, 20, 30]));
 
 // map each string to its frequency in ["apple", "banana", "apple", "apple", "banana"] => [3, 2, 3, 3, 2]
 const stringFrequencies = function (strings) { };
