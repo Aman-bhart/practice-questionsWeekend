@@ -111,11 +111,18 @@ const filterRecentOrders = function (orders) {
   });
 };
 
-console.log(filterRecentOrders([{ orderDate: "2024-11-01" }, { orderDate: "2024-12-01" }]));
+// console.log(filterRecentOrders([{ orderDate: "2024-11-01" }, { orderDate: "2024-12-01" }]));
 
 
 // products with a price lower than the average [{name: "item1", price: 10}, {name: "item2", price: 20}, {name: "item3", price: 5}] => [{name: "item1", price: 10}, {name: "item3", price: 5}]
-const filterBelowAveragePrice = function (products) { };
+const filterBelowAveragePrice = function (products) {
+  const prices = products.map(productDetail => productDetail.price);
+  const avg = prices.reduce((sum, nums) => sum + nums) / prices.length;
+
+  return products.filter(productDetail => productDetail.price < avg);
+};
+
+// console.log(filterBelowAveragePrice([{ name: "item1", price: 10 }, { name: "item2", price: 20 }, { name: "item3", price: 5 }]));
 
 // active users who posted in the last 7 days [{username: "alice", lastPostDate: "2024-12-01", active: true}, {username: "bob", lastPostDate: "2024-11-20", active: true}] => [{username: "alice", lastPostDate: "2024-12-01", active: true}]
 const filterRecentActiveUsers = function (users) { };
