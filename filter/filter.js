@@ -321,10 +321,22 @@ const filterByPostCount = function (users, postCount) {
 // console.log(filterByPostCount([{username: "Alice", posts: 10}, {username: "Bob", posts: 5}],8));
 
 // Apply a discount to each item's price, then filter for items under a certain price [{name: "item1", price: 100}, {name: "item2", price: 50}] => [{name: "item2", price: 45}]
-const filterDiscountedItems = function (items, discount, maxPrice) {};
+
+const filterDiscountedItems = function (items, discount, maxPrice) {
+  return items
+    .map((item) => {
+      item.price -= (item.price * discount) / 100;
+      return item;
+    })
+    .filter(({ price }) => price < maxPrice);
+};
+
+// console.log( filterDiscountedItems([{ name: "item1", price: 100 },{ name: "item2", price: 50 }],10,50));
 
 // Convert product names to uppercase, then filter for products with names longer than a certain number [{name: "apple"}, {name: "banana"}] => [{name: "APPLE"}]
-const filterLongProductNames = function (products, minLength) {};
+const filterLongProductNames = function (products, minLength) {
+  products = products.map(({ name }) => name.upperCase());
+};
 
 // Group users by their age, then filter for specific age groups [{name: "Alice", age: 25}, {name: "Bob", age: 35}] => [{name: "Bob", age: 35}]
 const filterAgeGroups = function (users, ageGroup) {};
