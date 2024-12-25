@@ -295,7 +295,7 @@ const filterByYear = function (books, year) {
   return books.filter(({ year }) => year > prefYear);
 };
 
-console.log();
+// console.log(filterByYear([{title: "Book1", year: 2020}, {title: "Book2", year: 2022}],2021));
 
 // filter students with a grade higher than a given threshold in a specific subject [{name: "Alice", grades: {math: 90, science: 80}}, {name: "Bob", grades: {math: 70, science: 85}}] => [{name: "Alice", grades: {math: 90, science: 80}}]
 const filterBySubjectGrade = function (students, subject, threshold) {};
