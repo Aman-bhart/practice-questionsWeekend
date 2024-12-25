@@ -298,10 +298,20 @@ const filterByYear = function (books, year) {
 // console.log(filterByYear([{title: "Book1", year: 2020}, {title: "Book2", year: 2022}],2021));
 
 // filter students with a grade higher than a given threshold in a specific subject [{name: "Alice", grades: {math: 90, science: 80}}, {name: "Bob", grades: {math: 70, science: 85}}] => [{name: "Alice", grades: {math: 90, science: 80}}]
-const filterBySubjectGrade = function (students, subject, threshold) {};
+const filterBySubjectGrade = function (students, subject, threshold) {
+  return students.filter(({ grades }) => grades[subject] > threshold);
+};
+
+// console.log(filterBySubjectGrade([{name: "Alice", grades: {math: 90, science: 80}}, {name: "Bob", grades: {math: 70, science: 85}}],"math",85));
 
 // filter photos with a minimum number of likes [{id: 1, likes: 100}, {id: 2, likes: 50}] => [{id: 1, likes: 100}]
-const filterByLikes = function (photos, likes) {};
+const filterByLikes = function (photos, likes) {
+  const prefLikes = likes;
+
+  return photos.filter(({ likes }) => likes > prefLikes);
+};
+
+console.log(filter);
 
 // filter users who have made a certain number of posts [{username: "Alice", posts: 10}, {username: "Bob", posts: 5}] => [{username: "Alice", posts: 10}]
 const filterByPostCount = function (users, postCount) {};
