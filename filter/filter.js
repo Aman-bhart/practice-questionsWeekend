@@ -210,7 +210,13 @@ const filterCitiesAboveMedianPopulation = function (cities) {
 // console.log(filterCitiesAboveMedianPopulation([{name: "City A", population: 2000}, {name: "City B", population: 5000}, {name: "City C", population: 3000}]));
 
 // posts with more than the average number of likes [{postId: 1, likes: 100}, {postId: 2, likes: 200}, {postId: 3, likes: 150}] => [{postId: 2, likes: 200}]
-const filterPopularPosts = function (posts) {};
+const filterPopularPosts = function (posts) {
+  const avg = calcAverage(posts.map(({ likes }) => likes));
+
+  return posts.filter(({ likes }) => likes > avg);
+};
+
+// console.log(filterPopularPosts([{postId: 1, likes: 100}, {postId: 2, likes: 200}, {postId: 3, likes: 150}]));
 
 // users who have posted more than the average number of posts [{username: "Alice", postCount: 5}, {username: "Bob", postCount: 8}, {username: "Charlie", postCount: 3}] => [{username: "Bob", postCount: 8}]
 const filterActiveUsersByPostCount = function (users) {};
