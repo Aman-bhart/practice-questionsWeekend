@@ -124,7 +124,7 @@ const getNumOfDays = function (date, referenceYear = 2024) {
 const isWithinDays = function (date, daysRange) {
   const todayDate = "2024-12-25";
 
-  return getNumOfDays(todayDate) - getNumOfDays(date) < 30;
+  return getNumOfDays(todayDate) - getNumOfDays(date) < daysRange;
 };
 
 const filterRecentOrders = function (orders) {
@@ -255,7 +255,11 @@ const filterByPrice = function (products, price) {
 // console.log(filterByPrice([{name: "item1", price: 20}, {name: "item2", price: 50}, {name: "item3", price: 10}],30));
 
 // filter students who scored above a certain grade in Math [{name: "John", grades: {math: 80, science: 90}}, {name: "Jane", grades: {math: 70, science: 85}}] => [{name: "John", grades: {math: 80, science: 90}}]
-const filterByMathGrade = function (students, grade) {};
+const filterByMathGrade = function (students, grade) {
+  return students.filter(({ grades }) => grades.math > grade);
+};
+
+// console.log(filterByMathGrade([{name: "John", grades: {math: 80, science: 90}}, {name: "Jane", grades: {math: 70, science: 85}}],75));
 
 // filter events that occur before a certain date [{name: "Event1", date: "2024-12-01"}, {name: "Event2", date: "2024-11-15"}] => [{name: "Event2", date: "2024-11-15"}]
 const filterByDate = function (events, date) {};
