@@ -280,10 +280,22 @@ const filterBySalary = function (employees, salary) {
 // console.log(filterBySalary([{name: "Alice", salary: 5000}, {name: "Bob", salary: 7000}],6000));
 
 // filter orders with a quantity greater than a given number [{orderId: 1, quantity: 10}, {orderId: 2, quantity: 5}] => [{orderId: 1, quantity: 10}]
-const filterByQuantity = function (orders, quantity) {};
+const filterByQuantity = function (orders, quantity) {
+  const preferQuality = quantity;
+
+  return orders.filter(({ quantity }) => quantity > preferQuality);
+};
+
+// console.log(filterByQuantity([{orderId: 1, quantity: 10}, {orderId: 2, quantity: 5}],7));
 
 // filter books published after a certain year [{title: "Book1", year: 2020}, {title: "Book2", year: 2022}] => [{title: "Book2", year: 2022}]
-const filterByYear = function (books, year) {};
+const filterByYear = function (books, year) {
+  const prefYear = year;
+
+  return books.filter(({ year }) => year > prefYear);
+};
+
+console.log();
 
 // filter students with a grade higher than a given threshold in a specific subject [{name: "Alice", grades: {math: 90, science: 80}}, {name: "Bob", grades: {math: 70, science: 85}}] => [{name: "Alice", grades: {math: 90, science: 80}}]
 const filterBySubjectGrade = function (students, subject, threshold) {};
