@@ -191,7 +191,23 @@ const filterHighSalaryEmployees = function (employees) {
 // console.log(filterHighSalaryEmployees([{name: "Alice", salary: 5000, department: "HR"}, {name: "Bob", salary: 7000, department: "HR"}, {name: "Charlie", salary: 4000, department: "IT"}]));
 
 // cities with a population higher than the median [{name: "City A", population: 2000}, {name: "City B", population: 5000}, {name: "City C", population: 3000}] => [{name: "City B", population: 5000}]
-const filterCitiesAboveMedianPopulation = function (cities) {};
+const getMedian = function (stats) {
+  stats.sort((a, b) => a - b);
+  if (stats.length % 2 === 0) {
+    const midTerm = stats.length / 2;
+    return (stats.at(midTerm - 1) + stats.at(midTerm)) / 2;
+  }
+
+  return stats.at((stats.length + 1) / 2 - 1);
+};
+
+const filterCitiesAboveMedianPopulation = function (cities) {
+  const median = getMedian(cities.map(({ population }) => population));
+
+  return cities.filter(({ population }) => population > median);
+};
+
+// console.log(filterCitiesAboveMedianPopulation([{name: "City A", population: 2000}, {name: "City B", population: 5000}, {name: "City C", population: 3000}]));
 
 // posts with more than the average number of likes [{postId: 1, likes: 100}, {postId: 2, likes: 200}, {postId: 3, likes: 150}] => [{postId: 2, likes: 200}]
 const filterPopularPosts = function (posts) {};
