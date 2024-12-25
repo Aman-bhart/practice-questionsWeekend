@@ -219,7 +219,13 @@ const filterPopularPosts = function (posts) {
 // console.log(filterPopularPosts([{postId: 1, likes: 100}, {postId: 2, likes: 200}, {postId: 3, likes: 150}]));
 
 // users who have posted more than the average number of posts [{username: "Alice", postCount: 5}, {username: "Bob", postCount: 8}, {username: "Charlie", postCount: 3}] => [{username: "Bob", postCount: 8}]
-const filterActiveUsersByPostCount = function (users) {};
+const filterActiveUsersByPostCount = function (users) {
+  const avg = calcAverage(users.map(({ postCount }) => postCount));
+
+  return users.filter(({ postCount }) => postCount > avg);
+};
+
+// console.log(filterActiveUsersByPostCount([{username: "Alice", postCount: 5}, {username: "Bob", postCount: 8}, {username: "Charlie", postCount: 3}]));
 
 // filter people older than a certain age [{name: "Alice", age: 25}, {name: "Bob", age: 30}, {name: "Charlie", age: 22}] => [{name: "Bob", age: 30}]
 const filterByAge = function (people, age) {};
