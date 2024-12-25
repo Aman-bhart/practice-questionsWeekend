@@ -238,7 +238,12 @@ const filterActiveUsersByPostCount = function (users) {
 // console.log(filterActiveUsersByPostCount([{username: "Alice", postCount: 5}, {username: "Bob", postCount: 8}, {username: "Charlie", postCount: 3}]));
 
 // filter people older than a certain age [{name: "Alice", age: 25}, {name: "Bob", age: 30}, {name: "Charlie", age: 22}] => [{name: "Bob", age: 30}]
-const filterByAge = function (people, age) {};
+const filterByAge = function (people, age) {
+  const certainAge = age;
+  return people.filter(({ age }) => age > certainAge);
+};
+
+// console.log(filterByAge([{name: "Alice", age: 25}, {name: "Bob", age: 30}, {name: "Charlie", age: 22}],26));
 
 // filter products that are cheaper than a given price [{name: "item1", price: 20}, {name: "item2", price: 50}, {name: "item3", price: 10}] => [{name: "item1", price: 20}, {name: "item3", price: 10}]
 const filterByPrice = function (products, price) {};
