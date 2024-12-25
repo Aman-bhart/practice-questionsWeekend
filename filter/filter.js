@@ -1,3 +1,15 @@
+const range = function (start, end, step) {
+  const arr = [];
+
+  for (let term = start; term <= end; term += step) {
+    arr.push(term);
+  }
+
+  return arr;
+};
+
+const sum = (a, b) => a + b;
+
 // even numbers [1, 2, 3, 4, 5] => [2, 4]
 const isEven = function (num) {
   return !(num & 1);
@@ -82,53 +94,41 @@ const filterInStockProducts = function (products) {
 // console.log(filterInStockProducts([{ product: "apple", inStock: true }, { product: "banana", inStock: false }]));
 
 // orders placed in the last 30 days [{orderDate: "2024-11-01"}, {orderDate: "2024-12-01"}] => [{orderDate: "2024-12-01"}]
-const isLeap = function (year) {
-  return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
+const isLeap = (year) =>
+  year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
+
+const getDaysOfYear = (year) => (isLeap(year) ? 366 : 365);
+
+const getPreviousMonthsDays = function (month, year) {
+  const febDay = isLeap(year) ? 29 : 28;
+  const monthArray = [31, febDay, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  return monthArray
+    .filter((days, monthIndex) => monthIndex < month - 1)
+    .reduce(sum, 0);
 };
 
-const getMaxDays = function (month, year) {
-  if (month === 2) {
-    return isLeap(year) ? 29 : 28;
-  }
+const getNumOfDays = function (date, referenceYear = 2024) {
+  const [year, month, days] = date.split("-").map((element) => +element);
 
-  if (month === 4 || month === 6 || month === 9 || month === 11) {
-    return 30;
-  }
+  const yearDiffArray = range(referenceYear, year - 1, 1);
 
-  return 31;
+  const noOfDays =
+    yearDiffArray.map(getDaysOfYear).reduce(sum, 0) +
+    getPreviousMonthsDays(month, year) +
+    days;
+
+  return noOfDays;
 };
 
-const daysDiff = function (todayDate, orderedDate) {
-  const orderedDateArray = orderedDate.split("-");
-  const todayDay = +todayDate.split("-")[2];
-  if (todayDate.split("-")[1] === orderedDateArray[1]) {
-    return todayDate - orderedDateArray[2];
-  }
-  return (
-    getMaxDays(+orderedDateArray[1], +orderedDateArray[0]) -
-    +orderedDateArray[2] +
-    todayDay
-  );
-};
+const isWithinDays = function (date, daysRange) {
+  const todayDate = "2024-12-25";
 
-const monthDiff = function (todayDate, orderedDate) {
-  return todayDate.split("-")[1] - orderedDate.split("-")[1];
-};
-
-const yearDiff = function (todayDate, orderedDate) {
-  return todayDate.split("-")[0] - orderedDate.split("-")[0];
+  return getNumOfDays(todayDate) - getNumOfDays(date) < 30;
 };
 
 const filterRecentOrders = function (orders) {
-  const todayDate = "2024-12-23";
-
-  return orders.filter(function (order) {
-    return !(
-      daysDiff(todayDate, order.orderDate) > 30 ||
-      monthDiff(todayDate, order.orderDate) > 1 ||
-      yearDiff(todayDate, order.orderDate) !== 0
-    );
-  });
+  return orders.filter((order) => isWithinDays(order.orderDate, 30));
 };
 
 // console.log(filterRecentOrders([{ orderDate: "2024-11-01" }, { orderDate: "2024-12-01" }]));
