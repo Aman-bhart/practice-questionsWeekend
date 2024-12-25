@@ -311,7 +311,7 @@ const filterByLikes = function (photos, likes) {
   return photos.filter(({ likes }) => likes > prefLikes);
 };
 
-console.log(filter);
+// console.log(filterByLikes([{id: 1, likes: 100}, {id: 2, likes: 50}],70));
 
 // filter users who have made a certain number of posts [{username: "Alice", posts: 10}, {username: "Bob", posts: 5}] => [{username: "Alice", posts: 10}]
 const filterByPostCount = function (users, postCount) {};
