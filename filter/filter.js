@@ -335,8 +335,15 @@ const filterDiscountedItems = function (items, discount, maxPrice) {
 
 // Convert product names to uppercase, then filter for products with names longer than a certain number [{name: "apple"}, {name: "banana"}] => [{name: "APPLE"}]
 const filterLongProductNames = function (products, minLength) {
-  products = products.map(({ name }) => name.upperCase());
+  products = products.map((product) => ({
+    ...product,
+    name: product.name.toUpperCase(),
+  }));
+
+  return products.filter(({ name }) => name.length > minLength);
 };
+
+// console.log(filterLongProductNames([{ name: "apple" }, { name: "banana" }], 5));
 
 // Group users by their age, then filter for specific age groups [{name: "Alice", age: 25}, {name: "Bob", age: 35}] => [{name: "Bob", age: 35}]
 const filterAgeGroups = function (users, ageGroup) {};
