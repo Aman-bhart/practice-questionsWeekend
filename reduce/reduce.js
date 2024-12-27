@@ -49,7 +49,11 @@ const sumPositiveNumbers = function (numbers) {
 // console.log(sumPositiveNumbers([1, -2, 3, -4]));
 
 // sumOfSquares([1, 2, 3, 4]) => 30
-const sumOfSquares = function (numbers) {};
+const sumOfSquares = function (numbers) {
+  return numbers.reduce((squSum, num) => squSum + num ** 2);
+};
+
+// console.log(sumOfSquares([1, 2, 3, 4]));
 
 // sumOfOddNumbers([1, 2, 3, 4, 5]) => 9
 const sumOfOddNumbers = function (numbers) {};
