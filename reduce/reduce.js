@@ -56,7 +56,11 @@ const sumOfSquares = function (numbers) {
 // console.log(sumOfSquares([1, 2, 3, 4]));
 
 // sumOfOddNumbers([1, 2, 3, 4, 5]) => 9
-const sumOfOddNumbers = function (numbers) {};
+const sumOfOddNumbers = function (numbers) {
+  return numbers.reduce((sum, num) => (num % 2 === 1 ? sum + num : sum));
+};
+
+// console.log(sumOfOddNumbers([1, 2, 3, 4, 5]));
 
 // countNegativeNumbers([1, -2, 3, -4]) => 2
 const countNegativeNumbers = function (numbers) {};
