@@ -114,7 +114,7 @@ const joinWithComma = function (words) {
 
 // reverseWords(["hello", "world"]) => "world hello"
 const reverseWords = function (words) {
-  return words.reduce((joined, word) => word.concat(" ", joined),"").trim();
+  return words.reduce((joined, word) => word.concat(" ", joined), "").trim();
 };
 
 // console.log(reverseWords(["hello", "world"]));
@@ -122,7 +122,12 @@ const reverseWords = function (words) {
 // console.log(reverseWords(["adil bhai"]));
 
 // joinWordsWithSpace(["apple", "banana", "cherry"]) => "apple banana cherry"
-const joinWordsWithSpace = function (words) {};
+const joinWordsWithSpace = function (words) {
+  return words.reduce((joined, word) => joined.concat(" ", word), "").trim();
+};
+
+// console.log(joinWordsWithSpace(["apple", "banana", "cherry"]));
+// console.log(joinWordsWithSpace([]));
 
 // concatenateNames(["John", "Jane", "Doe"]) => "JohnJaneDoe"
 const concatenateNames = function (names) {};
