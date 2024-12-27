@@ -42,7 +42,11 @@ const maxOf = function (numbers) {
 // console.log(maxOf([3, 1, 4, 1, 5, 9, 2]));
 
 // sumPositiveNumbers([1, -2, 3, -4]) => 4
-const sumPositiveNumbers = function (numbers) {};
+const sumPositiveNumbers = function (numbers) {
+  return numbers.reduce((posSum, num) => (num > 0 ? posSum + num : posSum));
+};
+
+// console.log(sumPositiveNumbers([1, -2, 3, -4]));
 
 // sumOfSquares([1, 2, 3, 4]) => 30
 const sumOfSquares = function (numbers) {};
