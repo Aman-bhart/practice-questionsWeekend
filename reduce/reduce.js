@@ -1,4 +1,11 @@
-import { getMaximum, getMinimum, product, sum } from "./useFulFnx.js";
+import {
+  getMaximum,
+  getMinimum,
+  isEven,
+  isPositive,
+  product,
+  sum,
+} from "./useFulFnx.js";
 
 // sumOf([1, 2, 3, 4]) => 10
 const sumOf = function (numbers) {
@@ -57,10 +64,21 @@ const sumOfOddNumbers = function (numbers) {
 // console.log(sumOfOddNumbers([1, 2, 3, 4, 5]));
 
 // countNegativeNumbers([1, -2, 3, -4]) => 2
-const countNegativeNumbers = function (numbers) {};
+const countNegativeNumbers = function (numbers) {
+  return numbers.reduce(
+    (count, num) => (isPositive(num) ? count : count + 1),
+    0
+  );
+};
+
+// console.log(countNegativeNumbers([1, -2, 3, -4]));
 
 // findSumOfEvenSquares([1, 2, 3, 4]) => 20
-const findSumOfEvenSquares = function (numbers) {};
+const findSumOfEvenSquares = function (numbers) {
+  return numbers.reduce((sum, num) => (isEven(num) ? sum + num ** 2 : sum), 0);
+};
+
+// console.log(findSumOfEvenSquares([1, 2, 3, 4]),isEven(10));
 
 // concatenateWords(["hello", "world"]) => "helloworld"
 const concatenateWords = function (words) {};
