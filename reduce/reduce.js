@@ -4,6 +4,7 @@ import {
   getMinimum,
   isEven,
   isPositive,
+  isVowel,
   maxLengthWord,
   minLengthWord,
   product,
@@ -134,10 +135,18 @@ const concatenateNames = function (names) {
   return names.reduce((joined, word) => joined.concat(word));
 };
 
-console.log(concatenateNames(["John", "Jane", "Doe"]));
+// console.log(concatenateNames(["John", "Jane", "Doe"]));
 
 // countVowelsInWords(["hello", "world"]) => "eoo"
-const countVowelsInWords = function (words) {};
+const vowel = function (word) {
+  return word.filter(isVowel).join("");
+};
+
+const countVowelsInWords = function (words) {
+  return words.reduce((countVowel, word) => countVowel + vowel([...word]), "");
+};
+
+console.log(countVowelsInWords(["hello", "world"]));
 
 // makeCamelCase(["hello", "world", "how", "are", "you"]) => "helloWorldHowAreYou"
 const makeCamelCase = function (words) {};

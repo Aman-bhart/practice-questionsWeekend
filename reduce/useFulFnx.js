@@ -17,3 +17,9 @@ export const maxLengthWord = (word1, word2) =>
 
 export const minLengthWord = (word1, word2) =>
   word1.length >= word2.length ? word2 : word1;
+
+export const isVowel = (alphabet) => {
+  const vowel = "aeiouAEIOU";
+
+  return vowel.includes(alphabet);
+};
