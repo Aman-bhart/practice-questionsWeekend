@@ -5,6 +5,7 @@ import {
   isEven,
   isPositive,
   maxLengthWord,
+  minLengthWord,
   product,
   sum,
 } from "./useFulFnx.js";
@@ -97,7 +98,11 @@ const longestWord = function (words) {
 // console.log(longestWord(["apple", "banana", "cherry", "kiwi"]));
 
 // shortestWord(["apple", "banana", "cherry", "kiwi"]) => "kiwi"
-const shortestWord = function (words) {};
+const shortestWord = function (words) {
+  return words.reduce(minLengthWord, words[0] || "");
+};
+
+// console.log(shortestWord(["apple", "banana", "cherry", "kiwi"]));
 
 // joinWithComma(["apple", "banana", "cherry"]) => "apple,banana,cherry"
 const joinWithComma = function (words) {};

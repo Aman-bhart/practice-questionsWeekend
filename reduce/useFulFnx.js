@@ -14,3 +14,6 @@ export const concString = (str1, str2) => str1.concat(str2);
 
 export const maxLengthWord = (word1, word2) =>
   word1.length >= word2.length ? word1 : word2;
+
+export const minLengthWord = (word1, word2) =>
+  word1.length >= word2.length ? word2 : word1;
