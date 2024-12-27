@@ -1,4 +1,5 @@
 import {
+  concString,
   getMaximum,
   getMinimum,
   isEven,
@@ -81,7 +82,11 @@ const findSumOfEvenSquares = function (numbers) {
 // console.log(findSumOfEvenSquares([1, 2, 3, 4]),isEven(10));
 
 // concatenateWords(["hello", "world"]) => "helloworld"
-const concatenateWords = function (words) {};
+const concatenateWords = function (words) {
+  return words.reduce(concString, "");
+};
+
+// console.log(concatenateWords(["hello", "world"]));
 
 // longestWord(["apple", "banana", "cherry", "kiwi"]) => "banana"
 const longestWord = function (words) {};
