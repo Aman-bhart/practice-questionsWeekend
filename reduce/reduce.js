@@ -2,6 +2,8 @@ const sum = (a, b) => a + b;
 
 const product = (a, b) => a * b;
 
+const getMinimum = (a, b) => (a > b ? b : a);
+
 // sumOf([1, 2, 3, 4]) => 10
 const sumOf = function (numbers) {
   return numbers.reduce(sum, 0);
@@ -24,7 +26,11 @@ const averageOf = function (numbers) {
 // console.log(averageOf([1, 2, 3, 4, 5]));
 
 // minOf([3, 1, 4, 1, 5, 9, 2]) => 1
-const minOf = function (numbers) {};
+const minOf = function (numbers) {
+  return numbers.reduce(getMinimum, Infinity);
+};
+
+// console.log(minOf([3, 1, 4, 1, 5, 9, 2]));
 
 // maxOf([3, 1, 4, 1, 5, 9, 2]) => 9
 const maxOf = function (numbers) {};
