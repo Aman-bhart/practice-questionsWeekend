@@ -105,10 +105,21 @@ const shortestWord = function (words) {
 // console.log(shortestWord(["apple", "banana", "cherry", "kiwi"]));
 
 // joinWithComma(["apple", "banana", "cherry"]) => "apple,banana,cherry"
-const joinWithComma = function (words) {};
+const joinWithComma = function (words) {
+  return words.reduce((joined, word) => joined + "," + word, "").slice(1);
+};
+
+// console.log(joinWithComma(["apple", "banana", "cherry"]));
+// console.log(joinWithComma([]));
 
 // reverseWords(["hello", "world"]) => "world hello"
-const reverseWords = function (words) {};
+const reverseWords = function (words) {
+  return words.reduce((joined, word) => word.concat(" ", joined),"").trim();
+};
+
+// console.log(reverseWords(["hello", "world"]));
+// console.log(reverseWords([]));
+// console.log(reverseWords(["adil bhai"]));
 
 // joinWordsWithSpace(["apple", "banana", "cherry"]) => "apple banana cherry"
 const joinWordsWithSpace = function (words) {};
