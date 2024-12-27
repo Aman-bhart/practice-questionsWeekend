@@ -346,7 +346,9 @@ const filterLongProductNames = function (products, minLength) {
 // console.log(filterLongProductNames([{ name: "apple" }, { name: "banana" }], 5));
 
 // Group users by their age, then filter for specific age groups [{name: "Alice", age: 25}, {name: "Bob", age: 35}] => [{name: "Bob", age: 35}]
-const filterAgeGroups = function (users, ageGroup) {};
+const filterAgeGroups = function (users, ageGroup) {
+  return users.filter(({ age }) => age === ageGroup);
+};
 
 // Convert grades to letter grades, then filter for students who passed [{name: "Alice", grade: 90}, {name: "Bob", grade: 55}] => [{name: "Alice", grade: 90}]
 const filterPassingGrades = function (students, passingGrade) {};
