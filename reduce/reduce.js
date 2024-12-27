@@ -1,10 +1,4 @@
-const sum = (a, b) => a + b;
-
-const product = (a, b) => a * b;
-
-const getMinimum = (a, b) => (a > b ? b : a);
-
-const getMaximum = (a, b) => (a > b ? a : b);
+import { getMaximum, getMinimum, product, sum } from "./useFulFnx.js";
 
 // sumOf([1, 2, 3, 4]) => 10
 const sumOf = function (numbers) {
