@@ -130,7 +130,11 @@ const joinWordsWithSpace = function (words) {
 // console.log(joinWordsWithSpace([]));
 
 // concatenateNames(["John", "Jane", "Doe"]) => "JohnJaneDoe"
-const concatenateNames = function (names) {};
+const concatenateNames = function (names) {
+  return names.reduce((joined, word) => joined.concat(word));
+};
+
+console.log(concatenateNames(["John", "Jane", "Doe"]));
 
 // countVowelsInWords(["hello", "world"]) => "eoo"
 const countVowelsInWords = function (words) {};
